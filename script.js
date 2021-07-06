@@ -7,17 +7,17 @@ const goods = [
 
 
 const $goodsList = document.querySelector('.goods-list');
-  
+
 const renderGoodsItem = ({ title, price }) => {
     return `<div class="goods-item"><h3>${title}</h3><p>${price}</p></div>`;
 };
-  
+
 const renderGoodsList = (list = goods) => {
     let goodsList = list.map(
-            item => renderGoodsItem(item)
-        );
+        item => renderGoodsItem(item)
+    ).join('\n');
 
     $goodsList.insertAdjacentHTML('beforeend', goodsList);
 }
-  
+
 renderGoodsList();
